@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+  <meta name="description" content="Count UP">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="author" content="İbrahim Korkusuz">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="bootstrap.min.css">
+   <title>Count Up</title>
+   
+   <style>
+   .counterUp {
+    padding: 15px;
+    margin-top: 20px;
+    background-color: #357cce;
+}
+   </style>
+</head>
+<body>
+
+<div class="container">
+<div class="row counterUp">
+<div class="col-md-5 col-xs-12" style="text-align:center">
+<h1 style="color:white; font-size:65px; font-weight:600" id="targetElement">0</h1>
+</div>
+
+<div class="col-md-3 col-xs-12" style="color:white; "><br />
+Dünyadaki <br>
+X Üniversitesinden  <br>
+Öğrenci Mezun Sayısı.</div>
+
+<div class="col-md-4 col-xs-12" style="margin-top:30px"><a class="btn btn-danger" href="#">İLETİŞİME GEÇ</a></div>
+</div>
+<div>
+
+<script src="scrollreveal.min.js"></script><script src="countup.min.js"></script><script>
+      ScrollReveal().reveal('#targetElement', { 
+        beforeReveal: function () {
+          const demo = new CountUp('targetElement', 143000, {suffix: '+'});
+          if (!demo.error) {
+            demo.start();
+          } else {
+            console.error(demo.error);
+          }
+        },
+      });
+    </script>
+	
+	</body>
+</html>
